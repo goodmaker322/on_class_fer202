@@ -1,11 +1,4 @@
-import {
-  Card,
-  Button,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  CardText,
-} from "react-bootstrap";
+import { Card, Button, Container } from "react-bootstrap";
 const movies = [
   {
     id: 1,
@@ -30,23 +23,23 @@ const movies = [
   },
 ];
 
-const CardItem = () => {
+const Movies = () => {
   return (
-    <div className="d-flex gap-5 p-5">
+    <Container className="d-flex py-4 flex-wrap justify-content-between">
       {movies.map((movie) => (
         <Card key={movie.id} style={{ width: "auto" }}>
-          <CardBody>
-            <CardTitle>{movie.title}</CardTitle>
-            <CardSubtitle>{movie.director}</CardSubtitle>
-            <CardText>
-              <strong>Duration:</strong> {movie.duration} <br />
-              <strong>Rating: </strong> {movie.rating}
-            </CardText>
+          <Card.Body>
+            <Card.Title>{movie.title}</Card.Title>
+            <Card.Subtitle>{movie.director}</Card.Subtitle>
+            <Card.Text>
+              Duration: {movie.duration} <br />
+              Rating: {movie.rating}
+            </Card.Text>
             <Button> View Showtimes</Button>
-          </CardBody>
+          </Card.Body>
         </Card>
       ))}
-    </div>
+    </Container>
   );
 };
-export default CardItem;
+export default Movies;
