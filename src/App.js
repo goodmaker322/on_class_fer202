@@ -8,16 +8,16 @@ import BookList from "./components/BookList";
 function App() {
   return (
     <div className="App">
-      {/* <Header />
+      <Header />
       <Gallery />
       <hr />
       <Profile1 />
       <hr />
       <Profile2 />
       <hr />
-      <Tabs/>
+      <Tabs />
       <hr />
-      <Movies /> */}
+      <Movies />
       <hr />
       <BookList />
     </div>

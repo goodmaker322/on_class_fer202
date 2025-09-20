@@ -23,12 +23,21 @@ const BookList = () => {
     "All Authors",
     ...Array.from(new Set(books.map((book) => book.author))),
   ];
-  const filteredBooks = books.filter(
-    (book) =>
-      (selectedCategory === "All Categories" ||
-        book.category === selectedCategory) &&
-      (selectedAuthor === "All Authors" || book.author === selectedAuthor)
-  );
+
+  const [searchTitle, setSearchTitle] = useState("");
+
+  const [displayBooks, setDisplayBooks] = useState(books);
+  const handleBorrowButtonClick = () => {
+    const filteredBooks = books.filter(
+      (book) =>
+        (selectedCategory === "All Categories" ||
+          book.category === selectedCategory) &&
+        (selectedAuthor === "All Authors" || book.author === selectedAuthor) &&
+        (searchTitle.trim() === "" ||
+          book.title.toLowerCase().includes(searchTitle.toLowerCase()))
+    );
+    setDisplayBooks(filteredBooks);
+  };
 
   return (
     <Container className="my-4">
@@ -91,16 +100,23 @@ const BookList = () => {
         </Col>
         <Col xs={12} md={4} lg={6}>
           <Form className="d-flex gap-2">
-            <Form.Control type="text" placeholder="Enter title to search" />
+            <Form.Control
+              type="text"
+              value={searchTitle}
+              onChange={(e) => setSearchTitle(e.target.value)}
+              placeholder="Enter title to search"
+            />
           </Form>
           <div className="d-flex justify-content-end mt-4">
-            <Button variant="success">Borrow</Button>
+            <Button variant="success" onClick={handleBorrowButtonClick}>
+              Borrow
+            </Button>
           </div>
         </Col>
       </Row>
 
       <Row className="mb-4 d-flex justify-content-start">
-        {filteredBooks.map((book) => (
+        {displayBooks.map((book) => (
           <Col key={book.id} className="mb-4" xs={12} sm={6} md={4} lg={3}>
             <Card className="h-100 d-flex flex-column align-items-center">
               <Card.Img
