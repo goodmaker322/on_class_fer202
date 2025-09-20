@@ -8,7 +8,7 @@ import BookList from "./components/BookList";
 function App() {
   return (
     <div className="App">
-      <Header />
+      {/* <Header />
       <Gallery />
       <hr />
       <Profile1 />
@@ -17,10 +17,9 @@ function App() {
       <hr />
       <Tabs/>
       <hr />
-      <Movies />
-      <hr/>
-      <BookList/>
-      
+      <Movies /> */}
+      <hr />
+      <BookList />
     </div>
   );
 }
