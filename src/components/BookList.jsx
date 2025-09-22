@@ -39,6 +39,15 @@ const BookList = () => {
     setDisplayBooks(filteredBooks);
   };
 
+  // const filteredBooks = books.filter(
+  //   (book) =>
+  //     (selectedCategory === "All Categories" ||
+  //       book.category === selectedCategory) &&
+  //     (selectedAuthor === "All Authors" || book.author === selectedAuthor) &&
+  //     (searchTitle.trim() === "" ||
+  //       book.title.toLowerCase().includes(searchTitle.toLowerCase()))
+  // );
+
   return (
     <Container className="my-4">
       <Row className="mb-4">

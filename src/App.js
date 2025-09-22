@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Gallery />
+      {/* <Gallery />
       <hr />
       <Profile1 />
       <hr />
@@ -17,7 +17,7 @@ function App() {
       <hr />
       <Tabs />
       <hr />
-      <Movies />
+      <Movies /> */}
       <hr />
       <BookList />
     </div>
