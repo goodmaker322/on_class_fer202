@@ -34,7 +34,7 @@ const BookList = () => {
           book.category === selectedCategory) &&
         (selectedAuthor === "All Authors" || book.author === selectedAuthor) &&
         (searchTitle.trim() === "" ||
-          book.title.toLowerCase().includes(searchTitle.toLowerCase()))
+          book.title.toLowerCase().startsWith(searchTitle.toLowerCase()))
     );
     setDisplayBooks(filteredBooks);
   };
@@ -45,7 +45,7 @@ const BookList = () => {
   //       book.category === selectedCategory) &&
   //     (selectedAuthor === "All Authors" || book.author === selectedAuthor) &&
   //     (searchTitle.trim() === "" ||
-  //       book.title.toLowerCase().includes(searchTitle.toLowerCase()))
+  //       book.title.toLowerCase().startsWith(searchTitle.toLowerCase()))
   // );
 
   return (
@@ -63,16 +63,14 @@ const BookList = () => {
                 boxShadow: "none",
                 height: "40px",
                 fontWeight: 500,
-              }}
-            >
+              }}>
               {selectedCategory}
             </Dropdown.Toggle>
             <Dropdown.Menu className="w-100">
               {categories.map((category) => (
                 <Dropdown.Item
                   key={category}
-                  onClick={() => setSelectedCategory(category)}
-                >
+                  onClick={() => setSelectedCategory(category)}>
                   {category}
                 </Dropdown.Item>
               ))}
@@ -91,16 +89,14 @@ const BookList = () => {
                 boxShadow: "none",
                 height: "40px",
                 fontWeight: 500,
-              }}
-            >
+              }}>
               {selectedAuthor}
             </Dropdown.Toggle>
             <Dropdown.Menu className="w-100">
               {authors.map((author) => (
                 <Dropdown.Item
                   key={author}
-                  onClick={() => setSelectedAuthor(author)}
-                >
+                  onClick={() => setSelectedAuthor(author)}>
                   {author}
                 </Dropdown.Item>
               ))}
@@ -144,21 +140,21 @@ const BookList = () => {
                 <Card.Text>
                   <ListGroup variant="flush">
                     <ListGroup.Item>
-                      <strong>Author:</strong> {book.author}
+                      <strong>Author: </strong> {book.author}
                     </ListGroup.Item>
                     <ListGroup.Item>
-                      <strong>Category:</strong> {book.category}
+                      <strong>Category: </strong> {book.category}
                     </ListGroup.Item>
                     <ListGroup.Item>
-                      <strong>Rating:</strong>
+                      <strong>Rating: </strong>
                       {book.rating}
                     </ListGroup.Item>
                     <ListGroup.Item>
-                      <strong>Available Copies:</strong>
+                      <strong>Available Copies: </strong>
                       {book.availableCopies}
                     </ListGroup.Item>
                     <ListGroup.Item>
-                      <strong>Total Copies:</strong>
+                      <strong>Total Copies: </strong>
                       {book.totalCopies}
                     </ListGroup.Item>
                   </ListGroup>
