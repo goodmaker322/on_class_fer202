@@ -34,7 +34,8 @@ const BookList = () => {
           book.category === selectedCategory) &&
         (selectedAuthor === "All Authors" || book.author === selectedAuthor) &&
         (searchTitle.trim() === "" ||
-          book.title.toLowerCase().startsWith(searchTitle.toLowerCase()))
+          book.title.toLowerCase().startsWith(searchTitle.toLowerCase()) ||
+          book.title.toLowerCase().includes(searchTitle.toLowerCase()))
     );
     setDisplayBooks(filteredBooks);
   };
