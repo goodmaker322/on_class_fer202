@@ -26,27 +26,27 @@ const BookList = () => {
 
   const [searchTitle, setSearchTitle] = useState("");
 
-  const [displayBooks, setDisplayBooks] = useState(books);
-  const handleBorrowButtonClick = () => {
-    const filteredBooks = books.filter(
-      (book) =>
-        (selectedCategory === "All Categories" ||
-          book.category === selectedCategory) &&
-        (selectedAuthor === "All Authors" || book.author === selectedAuthor) &&
-        (searchTitle.trim() === "" ||
-          book.title.toLowerCase().startsWith(searchTitle.toLowerCase()))
-    );
-    setDisplayBooks(filteredBooks);
-  };
+  // const [displayBooks, setDisplayBooks] = useState(books);
+  // const handleBorrowButtonClick = () => {
+  //   const filteredBooks = books.filter(
+  //     (book) =>
+  //       (selectedCategory === "All Categories" ||
+  //         book.category === selectedCategory) &&
+  //       (selectedAuthor === "All Authors" || book.author === selectedAuthor) &&
+  //       (searchTitle.trim() === "" ||
+  //         book.title.toLowerCase().startsWith(searchTitle.toLowerCase()))
+  //   );
+  //   setDisplayBooks(filteredBooks);
+  // };
 
-  // const filteredBooks = books.filter(
-  //   (book) =>
-  //     (selectedCategory === "All Categories" ||
-  //       book.category === selectedCategory) &&
-  //     (selectedAuthor === "All Authors" || book.author === selectedAuthor) &&
-  //     (searchTitle.trim() === "" ||
-  //       book.title.toLowerCase().startsWith(searchTitle.toLowerCase()))
-  // );
+  const filteredBooks = books.filter(
+    (book) =>
+      (selectedCategory === "All Categories" ||
+        book.category === selectedCategory) &&
+      (selectedAuthor === "All Authors" || book.author === selectedAuthor) &&
+      (searchTitle.trim() === "" ||
+        book.title.toLowerCase().startsWith(searchTitle.toLowerCase()))
+  );
 
   return (
     <Container className="my-4">
@@ -63,14 +63,16 @@ const BookList = () => {
                 boxShadow: "none",
                 height: "40px",
                 fontWeight: 500,
-              }}>
+              }}
+            >
               {selectedCategory}
             </Dropdown.Toggle>
             <Dropdown.Menu className="w-100">
               {categories.map((category) => (
                 <Dropdown.Item
                   key={category}
-                  onClick={() => setSelectedCategory(category)}>
+                  onClick={() => setSelectedCategory(category)}
+                >
                   {category}
                 </Dropdown.Item>
               ))}
@@ -89,14 +91,16 @@ const BookList = () => {
                 boxShadow: "none",
                 height: "40px",
                 fontWeight: 500,
-              }}>
+              }}
+            >
               {selectedAuthor}
             </Dropdown.Toggle>
             <Dropdown.Menu className="w-100">
               {authors.map((author) => (
                 <Dropdown.Item
                   key={author}
-                  onClick={() => setSelectedAuthor(author)}>
+                  onClick={() => setSelectedAuthor(author)}
+                >
                   {author}
                 </Dropdown.Item>
               ))}
@@ -113,15 +117,13 @@ const BookList = () => {
             />
           </Form>
           <div className="d-flex justify-content-end mt-4">
-            <Button variant="success" onClick={handleBorrowButtonClick}>
-              Borrow
-            </Button>
+            <Button variant="success">Borrow</Button>
           </div>
         </Col>
       </Row>
 
       <Row className="mb-4 d-flex justify-content-start">
-        {displayBooks.map((book) => (
+        {filteredBooks.map((book) => (
           <Col key={book.id} className="mb-4" xs={12} sm={6} md={4} lg={3}>
             <Card className="h-100 d-flex flex-column align-items-center">
               <Card.Img
