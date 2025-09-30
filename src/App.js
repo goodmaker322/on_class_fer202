@@ -11,11 +11,13 @@ import Box from "./components/Box";
 import Hello from "./components/Hello";
 import Avatar from "./components/Avatar";
 import BookList2 from "./components/BookList2";
+import StudentManagement from "./components/StudentManagerment";
+import ProjectList from "./components/ProjectList";
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      {/* <Header /> */}
       {/* <Gallery />
       <hr />
       <Profile1 />
@@ -25,8 +27,8 @@ function App() {
       <Tabs />
       <hr />
       <Movies /> */}
-      <hr />
-      <BookList />
+      {/* <hr />
+      <BookList /> */}
 
       {/* <hr />
       <CounterDemo/>
@@ -38,14 +40,18 @@ function App() {
       <Box boxColor='red' width ='150px' height='150px'/>
       <Box boxColor='blue' width ='100px' height='100px'/> */}
 
-      <hr />
+      {/* <hr />
       <Hello who="Tam Anh" />
       <Hello who="Tam Anh" age={22} />
 
       <hr />
       <Avatar />
       <hr />
-      <BookList2 />
+      <BookList2 /> */}
+
+      {/* <StudentManagement /> */}
+
+      <ProjectList />
     </div>
   );
 }
