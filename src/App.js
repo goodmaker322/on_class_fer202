@@ -13,6 +13,13 @@ import Avatar from "./components/Avatar";
 import BookList2 from "./components/BookList2";
 import StudentManagement from "./components/StudentManagerment";
 import ProjectList from "./components/ProjectList";
+import EffectDemo from "./components/EffectDemo";
+import EffectDemo1 from "./components/EffectDemo1";
+import EffectDemo2 from "./components/EffectDemo2";
+import RefDemo from "./components/RefDemo";
+import Counter1 from "./components/Counter1";
+import RefDomExample from "./components/RefDomExample";
+import ExCountDown from "./components/ExCountDown";
 
 function App() {
   return (
@@ -51,7 +58,19 @@ function App() {
 
       {/* <StudentManagement /> */}
 
-      <ProjectList />
+      {/* <ProjectList /> */}
+
+      {/* <EffectDemo /> */}
+      {/* <EffectDemo1 />
+
+      <EffectDemo2 /> */}
+
+      <RefDemo />
+
+      <Counter1 />
+      <RefDomExample />
+
+      <ExCountDown />
     </div>
   );
 }
