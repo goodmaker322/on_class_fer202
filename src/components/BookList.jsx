@@ -114,9 +114,7 @@ const BookList = () => {
             />
           </Form>
           <div className="d-flex justify-content-end mt-4">
-            <Button variant="success" onClick={handleBorrowButtonClick}>
-              Borrow
-            </Button>
+            <Button variant="success">Borrow</Button>
           </div>
         </Col>
       </Row>
