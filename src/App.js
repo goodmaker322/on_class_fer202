@@ -20,12 +20,16 @@ import RefDemo from "./components/RefDemo";
 import Counter1 from "./components/Counter1";
 import RefDomExample from "./components/RefDomExample";
 import ExCountDown from "./components/ExCountDown";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HeaderMoviePE from "./components/HeaderMoviePE";
+import MoviePE from "./components/MoviePE";
 
 function App() {
   return (
     <div className="App">
-      {/* <Header /> */}
-      {/* <Gallery />
+      {/* On Class FER 202  */}
+      {/* <Header />
+      <Gallery />
       <hr />
       <Profile1 />
       <hr />
@@ -33,44 +37,60 @@ function App() {
       <hr />
       <Tabs />
       <hr />
-      <Movies /> */}
-      {/* <hr />
-      <BookList /> */}
+      <Movies />
+      <hr />
+      <BookList />
 
-      {/* <hr />
-      <CounterDemo/>
+      <hr />
+      <CounterDemo/> 
 
       <hr/>
       <FormDemo/>
 
       <hr/>
       <Box boxColor='red' width ='150px' height='150px'/>
-      <Box boxColor='blue' width ='100px' height='100px'/> */}
+      <Box boxColor='blue' width ='100px' height='100px'/> 
 
-      {/* <hr />
+      <hr />
       <Hello who="Tam Anh" />
       <Hello who="Tam Anh" age={22} />
 
       <hr />
       <Avatar />
       <hr />
-      <BookList2 /> */}
+      <BookList2 />
 
-      {/* <StudentManagement /> */}
+       <StudentManagement />
 
-      {/* <ProjectList /> */}
+      <ProjectList /> 
 
-      {/* <EffectDemo /> */}
-      {/* <EffectDemo1 />
+      <EffectDemo /> 
+      <EffectDemo1 />
 
-      <EffectDemo2 /> */}
+      <EffectDemo2 />
 
       <RefDemo />
 
       <Counter1 />
       <RefDomExample />
 
-      <ExCountDown />
+      <ExCountDown /> */}
+
+      {/* PE MovieList  */}
+
+      <div className="App">
+        <HeaderMoviePE />
+        <main>
+          <Routes>
+            <Route path="/" element={<div>Dashboard Home</div>} />
+            <Route path="/director" element={<div>Directors Component</div>} />
+            <Route path="/producer" element={<div>Producers Component</div>} />
+            <Route path="/star" element={<div>Stars Component</div>} />
+            <Route path="/genre" element={<div>Genres Component</div>} />
+            <Route path="/movie" element={<MoviePE />} />
+          </Routes>
+        </main>
+      </div>
     </div>
   );
 }
